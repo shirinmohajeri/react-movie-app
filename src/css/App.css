@@ -1,0 +1,66 @@
+/* =========================================================
+   APP LAYOUT
+   Main layout shared by all pages
+   ========================================================= */
+
+
+/* =========================================================
+   MAIN CONTENT
+   This is the area below the navbar
+   ========================================================= */
+
+.main-content {
+  /* Take the remaining available vertical space */
+  flex: 1;
+
+  /* Use the full available width */
+  width: 100%;
+
+  /* Add horizontal space around page content */
+  padding: 1.5rem 2rem 3rem;
+
+  /* Keep padding inside the element width */
+  box-sizing: border-box;
+
+  /* Use Flexbox for page content */
+  display: flex;
+
+  /* Stack page content vertically */
+  flex-direction: column;
+
+  /* Keep content centered horizontally */
+  align-items: stretch;
+
+  /* Prevent content from becoming wider than the page */
+  overflow: hidden;
+}
+
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .main-content {
+    /* Reduce horizontal padding on tablets */
+    padding: 1.25rem 1rem 2.5rem;
+  }
+
+}
+
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 639px) {
+
+  .main-content {
+    /* Use smaller padding on mobile screens */
+    padding: 1rem 0.5rem 2rem;
+  }
+
+}

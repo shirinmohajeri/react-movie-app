@@ -1,0 +1,379 @@
+/* =========================================================
+   HOME PAGE
+   Main layout for the Home page
+   ========================================================= */
+
+.home {
+  /* Use the full available width */
+  width: 100%;
+
+  /* Add vertical space around the page */
+  padding: 2.5rem 0 4rem;
+
+  /* Keep padding inside the width */
+  box-sizing: border-box;
+
+  /* Needed for decorative background effects */
+  position: relative;
+}
+
+
+
+/* =========================================================
+   SEARCH FORM
+   Container for the search input and search button
+   ========================================================= */
+
+.search-form {
+  /* Prevent the search area from becoming too wide */
+  max-width: 720px;
+
+  /* Center the search form horizontally
+     and reduce the space below it */
+  margin: 0 auto 2.5rem;
+
+  /* Put input and button next to each other */
+  display: flex;
+
+  /* Add space between input and button */
+  gap: 0.75rem;
+
+  /* Add horizontal space */
+  padding: 0 1rem;
+
+  /* Keep padding inside the width */
+  box-sizing: border-box;
+}
+
+
+
+/* =========================================================
+   SEARCH INPUT
+   ========================================================= */
+
+.search-input {
+  /* Take all remaining horizontal space */
+  flex: 1;
+
+  /* Add comfortable space inside the input */
+  padding: 1rem 1.2rem;
+
+  /* Add a subtle cream border */
+  border: 1px solid var(--border-color);
+
+  /* Make the input rounded */
+  border-radius: 14px;
+
+  /* Glass-style dark background */
+  background: rgba(44, 37, 33, 0.62);
+
+  /* Cream text */
+  color: var(--cream);
+
+  /* Text size */
+  font-size: 1rem;
+
+  /* Remove browser default outline */
+  outline: none;
+
+  /* Add a glass blur */
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  /* Add a soft shadow */
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+
+  /* Smooth animation */
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+/* Style the text shown before the user types */
+.search-input::placeholder {
+  color: var(--text-secondary);
+}
+
+
+/* Style the input when the user clicks inside it */
+.search-input:focus {
+  /* Olive green active border */
+  border-color: rgba(64, 85, 66, 0.9);
+
+  /* Slightly lighter glass background */
+  background: rgba(44, 37, 33, 0.82);
+
+  /* Soft olive glow */
+  box-shadow:
+    0 0 0 4px rgba(64, 85, 66, 0.16),
+    0 12px 30px rgba(0, 0, 0, 0.22);
+}
+
+
+
+/* =========================================================
+   SEARCH BUTTON
+   ========================================================= */
+
+.search-button {
+  /* Add space inside the button */
+  padding: 1rem 1.6rem;
+
+  /* Olive green background */
+  background-color: var(--green);
+
+  /* Cream text */
+  color: var(--cream);
+
+  /* Remove default border */
+  border: 1px solid rgba(232, 220, 200, 0.08);
+
+  /* Rounded button */
+  border-radius: 14px;
+
+  /* Slightly bold text */
+  font-weight: 600;
+
+  /* Prevent Search from breaking into two lines */
+  white-space: nowrap;
+
+  /* Soft shadow */
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+  /* Smooth hover animation */
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+/* Search button hover */
+.search-button:hover {
+  /* Change to mustard */
+  background-color: var(--mustard);
+
+  /* Dark text gives better contrast */
+  color: var(--background);
+
+  /* Lift the button slightly */
+  transform: translateY(-2px);
+
+  /* Stronger shadow */
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.28),
+    0 0 18px rgba(199, 154, 59, 0.12);
+}
+
+
+/* Move the button back down while clicking */
+.search-button:active {
+  transform: translateY(0);
+}
+
+
+
+/* =========================================================
+   MOVIES GRID
+   Responsive layout for MovieCard components
+   ========================================================= */
+
+.movies-grid {
+  /* Use CSS Grid */
+  display: grid;
+
+  /*
+    Automatically create as many columns as possible.
+
+    minmax(190px, 1fr)
+
+    190px → smallest card width
+
+    1fr → cards can grow and share available space
+  */
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+
+  /* Space between cards */
+  gap: 1.4rem;
+
+  /*
+    Limit the maximum width of the movie area.
+
+    This prevents cards from becoming too large
+    on wide desktop screens.
+  */
+  max-width: 1450px;
+
+  /* Center the grid */
+  margin: 0 auto;
+
+  /* Add space around the grid */
+  padding: 0.5rem 1.5rem 1rem;
+
+  /* Use available width */
+  width: 100%;
+
+  /* Keep padding inside the width */
+  box-sizing: border-box;
+
+  /* Make all cards stretch evenly */
+  align-items: stretch;
+}
+
+
+
+/* =========================================================
+   ERROR MESSAGE
+   Shown when the API request fails
+   ========================================================= */
+
+.error-message {
+  /* Limit the width */
+  max-width: 720px;
+
+  /* Center the message */
+  margin: 0 auto 2rem;
+
+  /* Add internal spacing */
+  padding: 1rem 1.2rem;
+
+  /* Burgundy transparent background */
+  background: rgba(107, 30, 43, 0.18);
+
+  /* Burgundy border */
+  border: 1px solid rgba(107, 30, 43, 0.45);
+
+  /* Rounded corners */
+  border-radius: 12px;
+
+  /* Cream text */
+  color: var(--cream);
+
+  /* Center the text */
+  text-align: center;
+
+  /* Glass blur */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+
+
+/* =========================================================
+   LOADING MESSAGE
+   Shown while waiting for TMDB
+   ========================================================= */
+
+.loading {
+  /* Center the loading text */
+  text-align: center;
+
+  /* Add vertical space */
+  padding: 4rem 1rem;
+
+  /* Use muted cream color */
+  color: var(--text-secondary);
+
+  /* Slightly larger text */
+  font-size: 1rem;
+
+  /* Add spacing between letters */
+  letter-spacing: 0.08em;
+}
+
+
+
+/* =========================================================
+   TABLET RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .movies-grid {
+    /*
+      Allow slightly smaller cards
+      so more cards fit on tablet screens
+    */
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+
+    /* Reduce spacing slightly */
+    gap: 1.25rem;
+
+    /* Reduce side padding */
+    padding: 1rem;
+  }
+
+}
+
+
+
+/* =========================================================
+   MOBILE RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 639px) {
+
+  .home {
+    /* Reduce page spacing */
+    padding: 1.5rem 0 3rem;
+  }
+
+
+  .search-form {
+    /* Reduce space below search */
+    margin-bottom: 2rem;
+
+    /* Smaller side padding */
+    padding: 0 0.75rem;
+
+    /* Smaller gap */
+    gap: 0.5rem;
+  }
+
+
+  .search-input {
+    /* Reduce padding */
+    padding: 0.9rem 1rem;
+
+    /* Slightly smaller text */
+    font-size: 0.95rem;
+
+    /* Slightly smaller corners */
+    border-radius: 12px;
+  }
+
+
+  .search-button {
+    /* Reduce button padding */
+    padding: 0.9rem 1rem;
+
+    /* Slightly smaller text */
+    font-size: 0.9rem;
+
+    /* Slightly smaller corners */
+    border-radius: 12px;
+  }
+
+
+  .movies-grid {
+    /*
+      On small phones, cards can become smaller
+      while still automatically filling the screen.
+    */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+
+    /* Smaller space between cards */
+    gap: 1rem;
+
+    /* Smaller side padding */
+    padding: 0.75rem;
+  }
+
+}

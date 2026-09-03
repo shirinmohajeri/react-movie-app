@@ -1,0 +1,301 @@
+/* =========================================================
+   FAVORITES PAGE
+   Glassmorphism + earthy / nude style
+   ========================================================= */
+
+.favorites {
+  /* Use the full available width */
+  width: 100%;
+
+  /* Add space around the page content */
+  padding: 2rem 1.5rem 4rem;
+
+  /* Keep padding inside the width */
+  box-sizing: border-box;
+}
+
+
+
+/* =========================================================
+   FAVORITES TITLE
+   Main title shown when favorite movies exist
+   ========================================================= */
+
+.favorites h2 {
+  /* Add space below the title */
+  margin-bottom: 2.5rem;
+
+  /* Center the title */
+  text-align: center;
+
+  /* Make the title large */
+  font-size: 2.2rem;
+
+  /* Make the title bold */
+  font-weight: 700;
+
+  /* Use the cream color defined in index.css */
+  color: var(--cream);
+
+  /* Slightly reduce spacing between letters */
+  letter-spacing: -0.03em;
+
+  /* Add a subtle shadow behind the text */
+  text-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+
+
+/* =========================================================
+   EMPTY FAVORITES STATE
+   This box is shown when there are no favorite movies
+   ========================================================= */
+
+.favorites-empty {
+  /* Center all text inside the box */
+  text-align: center;
+
+  /* Add large internal space */
+  padding: 4rem 2rem;
+
+  /* Prevent the box from becoming too wide */
+  max-width: 620px;
+
+  /* Center the box horizontally and add vertical space */
+  margin: 4rem auto;
+
+  /*
+    Create a glass-style background.
+
+    The first layer is a soft gradient:
+    olive green → burgundy.
+
+    The second layer is a transparent dark brown.
+  */
+  background:
+    linear-gradient(
+      135deg,
+      rgba(64, 85, 66, 0.12),
+      rgba(107, 30, 43, 0.08)
+    ),
+    rgba(44, 37, 33, 0.5);
+
+  /* Add a subtle cream border */
+  border: 1px solid var(--border-color);
+
+  /* Make the corners rounded */
+  border-radius: 24px;
+
+  /* Blur whatever is behind the element */
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  /*
+    Add depth to the glass panel.
+
+    First shadow → outside shadow.
+    inset shadow → very subtle highlight inside the box.
+  */
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+  /* Animate the box when it appears */
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+
+
+/* =========================================================
+   EMPTY STATE TITLE
+   "No Favorite Movie Yet"
+   ========================================================= */
+
+.favorites-empty h2 {
+  /* Add space below the title */
+  margin-bottom: 1rem;
+
+  /* Make it smaller than the main Favorites page title */
+  font-size: 1.8rem;
+
+  /* Use cream text */
+  color: var(--cream);
+
+  /* Make the title bold */
+  font-weight: 700;
+
+  /* Remove the shadow inherited from .favorites h2 */
+  text-shadow: none;
+}
+
+
+
+/* =========================================================
+   EMPTY STATE TEXT
+   Message shown under "No Favorite Movie Yet"
+   ========================================================= */
+
+.favorites-empty p {
+  /* Use the softer beige secondary text */
+  color: var(--text-secondary);
+
+  /* Set a comfortable text size */
+  font-size: 1rem;
+
+  /* Add vertical space between text lines */
+  line-height: 1.7;
+
+  /* Prevent the paragraph from becoming too wide */
+  max-width: 430px;
+
+  /* Center the paragraph */
+  margin: 0 auto;
+}
+
+
+
+/* =========================================================
+   DECORATIVE COLOR LINE
+
+   Creates a small decorative line above the empty favorites
+   message without adding anything to Favorites.jsx.
+
+   ::before creates a virtual element before the actual content.
+   ========================================================= */
+
+.favorites-empty::before {
+  /* Create an empty decorative element before the content */
+  content: "";
+
+  /* Make the virtual element behave like a block */
+  display: block;
+
+  /* Set the size of the line */
+  width: 56px;
+  height: 4px;
+
+  /* Center the line and add space below it */
+  margin: 0 auto 1.5rem;
+
+  /*
+    Create a horizontal gradient.
+
+    90deg means:
+    the colors move from left to right.
+
+    green → mustard → burgundy
+  */
+  background: linear-gradient(
+    90deg,
+    var(--green),
+    var(--mustard),
+    var(--burgundy)
+  );
+
+  /* Make both ends of the line rounded */
+  border-radius: 999px;
+
+  /* Add a very subtle mustard glow around the line */
+  box-shadow: 0 0 18px rgba(199, 154, 59, 0.15);
+}
+
+
+
+/* =========================================================
+   FAVORITE MOVIE ANIMATION
+
+   This animation makes elements appear smoothly
+   from slightly below their final position.
+   ========================================================= */
+
+@keyframes fadeIn {
+
+  from {
+    /* Start invisible */
+    opacity: 0;
+
+    /* Start 20px lower than the final position */
+    transform: translateY(20px);
+  }
+
+  to {
+    /* Become fully visible */
+    opacity: 1;
+
+    /* Move to the normal position */
+    transform: translateY(0);
+  }
+
+}
+
+
+
+/* =========================================================
+   MOVIE CARD ANIMATION
+
+   ">" means direct children of .movies-grid.
+
+   "*" means every type of element.
+
+   So:
+   .movies-grid > *
+
+   means:
+   animate every direct child inside the movies grid.
+   ========================================================= */
+
+.movies-grid > * {
+  /* Apply the fadeIn animation to every MovieCard */
+  animation: fadeIn 0.35s ease-out forwards;
+}
+
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+
+   These styles are applied when the screen
+   width is 768px or smaller.
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .favorites {
+    /* Reduce page padding on smaller screens */
+    padding: 1.5rem 1rem 3rem;
+  }
+
+
+  .favorites h2 {
+    /* Make the page title smaller */
+    font-size: 1.8rem;
+
+    /* Reduce space below the title */
+    margin-bottom: 2rem;
+  }
+
+
+  .favorites-empty {
+    /* Reduce internal spacing */
+    padding: 3rem 1.5rem;
+
+    /* Reduce space around the box */
+    margin: 2.5rem auto;
+
+    /* Use slightly smaller rounded corners */
+    border-radius: 20px;
+  }
+
+
+  .favorites-empty h2 {
+    /* Make the empty-state title smaller */
+    font-size: 1.5rem;
+  }
+
+
+  .favorites-empty p {
+    /* Make the paragraph slightly smaller */
+    font-size: 0.95rem;
+  }
+
+}

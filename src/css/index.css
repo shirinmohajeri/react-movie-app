@@ -1,0 +1,299 @@
+/* =========================================================
+   GLOBAL STYLES
+   These styles affect the whole React application.
+   ========================================================= */
+
+:root {
+  /* Main font of the application */
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* Default text color */
+  color: #f2e8d8;
+
+  /* Default background color */
+  background-color: #171412;
+
+  /* Improve font rendering */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+
+
+  /* =========================================================
+     NUDE / EARTHY COLOR PALETTE
+
+     We define our main colors here once.
+
+     Later we can use:
+     var(--green)
+     var(--cream)
+     var(--burgundy)
+
+     instead of writing the color code again.
+     ========================================================= */
+
+
+  /* Main dark background */
+  --background: #171412;
+
+
+  /* Dark brown surfaces used for cards and inputs */
+  --surface: #211c19;
+
+
+  /* Slightly lighter surface */
+  --surface-light: #2c2521;
+
+
+  /* Main cream text */
+  --text-primary: #f2e8d8;
+
+
+  /* Muted beige secondary text */
+  --text-secondary: #b9aa98;
+
+
+  /* Olive / sage green */
+  --green: #405542;
+
+
+  /* Dark burgundy */
+  --burgundy: #6b1e2b;
+
+
+  /* Warm cream */
+  --cream: #e8dcc8;
+
+
+  /* Warm brown */
+  --brown: #5a3a2e;
+
+
+  /* Muted mustard */
+  --mustard: #c79a3b;
+
+
+  /* Subtle border used on glass elements */
+  --border-color: rgba(232, 220, 200, 0.12);
+}
+
+
+
+/* =========================================================
+   RESET
+   Remove default browser spacing.
+   ========================================================= */
+
+* {
+  /* Remove default margin */
+  margin: 0;
+
+  /* Remove default padding */
+  padding: 0;
+
+  /*
+    Include padding and border
+    inside the width and height.
+  */
+  box-sizing: border-box;
+}
+
+
+
+/* =========================================================
+   HTML + BODY
+   ========================================================= */
+
+html,
+body {
+  /* Prevent unwanted horizontal scrolling */
+  overflow-x: hidden;
+}
+
+
+
+/* Main body of the website */
+body {
+  /* Use the full page width */
+  width: 100%;
+
+  /* Prevent the layout from becoming extremely narrow */
+  min-width: 320px;
+
+  /* At least fill the full browser height */
+  min-height: 100vh;
+
+
+  /*
+    Main background.
+
+    We use several radial gradients to create
+    soft atmospheric light effects.
+
+    These are NOT strong bright colors.
+
+    They are intentionally transparent so
+    the design stays nude, dark and elegant.
+  */
+  background:
+
+    /* Soft olive green light in the top-left */
+    radial-gradient(
+      circle at 10% 5%,
+      rgba(64, 85, 66, 0.18),
+      transparent 30%
+    ),
+
+    /* Soft burgundy light on the right side */
+    radial-gradient(
+      circle at 90% 25%,
+      rgba(107, 30, 43, 0.15),
+      transparent 32%
+    ),
+
+    /* Small warm mustard glow near the bottom */
+    radial-gradient(
+      circle at 55% 95%,
+      rgba(199, 154, 59, 0.08),
+      transparent 28%
+    ),
+
+    /* Main dark brown background */
+    var(--background);
+
+
+  /* Main text color */
+  color: var(--text-primary);
+
+
+  /*
+    Keep the background fixed while scrolling.
+
+    This creates a subtle modern depth effect.
+  */
+  background-attachment: fixed;
+}
+
+
+
+/* =========================================================
+   REACT ROOT
+   React renders the application inside #root.
+   ========================================================= */
+
+#root {
+  /* Use the full width */
+  width: 100%;
+
+  /* Fill at least the full screen */
+  min-height: 100vh;
+
+  /* Use Flexbox */
+  display: flex;
+
+  /* Stack application sections vertically */
+  flex-direction: column;
+}
+
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+  /* Links inherit the color from their parent */
+  color: inherit;
+
+  /* Remove default underline */
+  text-decoration: none;
+}
+
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+button {
+  /* Use the same font as the website */
+  font-family: inherit;
+
+  /* Show pointer cursor */
+  cursor: pointer;
+
+  /* Remove default browser border */
+  border: none;
+}
+
+
+
+/* =========================================================
+   IMAGES
+   ========================================================= */
+
+img {
+  /*
+    Removes the small empty space
+    that inline images normally have.
+  */
+  display: block;
+
+  /* Prevent images from overflowing */
+  max-width: 100%;
+}
+
+
+
+/* =========================================================
+   TEXT SELECTION
+   Style when the user selects text with the mouse.
+   ========================================================= */
+
+::selection {
+  /* Burgundy selection background */
+  background-color: var(--burgundy);
+
+  /* Cream selected text */
+  color: var(--cream);
+}
+
+
+
+/* =========================================================
+   SCROLLBAR
+   Modern subtle scrollbar
+   ========================================================= */
+
+/* Scrollbar width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+
+/* Scrollbar background */
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+
+/* Scrollbar handle */
+::-webkit-scrollbar-thumb {
+  /* Olive green transparent handle */
+  background: rgba(64, 85, 66, 0.7);
+
+  /* Rounded scrollbar */
+  border-radius: 999px;
+
+  /* Create a small space around the scrollbar handle */
+  border: 2px solid var(--background);
+}
+
+
+/* Scrollbar hover */
+::-webkit-scrollbar-thumb:hover {
+  /* Change to mustard when hovering */
+  background: var(--mustard);
+}

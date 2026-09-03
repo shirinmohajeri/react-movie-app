@@ -1,0 +1,262 @@
+/* =========================================================
+   NAVBAR
+   Glassmorphism + earthy / nude navigation bar
+   ========================================================= */
+
+.navbar {
+  /* Use the full width of the page */
+  width: 100%;
+
+  /* Add space inside the navbar */
+  padding: 1rem 2rem;
+
+  /* Put brand and navigation links next to each other */
+  display: flex;
+
+  /* Brand on the left, links on the right */
+  justify-content: space-between;
+
+  /* Vertically center everything */
+  align-items: center;
+
+  /*
+    Use a transparent dark-brown background.
+
+    This makes the navbar feel softer than pure black.
+  */
+  background:
+    linear-gradient(
+      90deg,
+      rgba(64, 85, 66, 0.08),
+      rgba(23, 20, 18, 0.82),
+      rgba(107, 30, 43, 0.08)
+    ),
+    rgba(23, 20, 18, 0.82);
+
+  /* Add a subtle cream border underneath */
+  border-bottom: 1px solid var(--border-color);
+
+  /* Blur content behind the navbar */
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  /* Keep navbar visible while scrolling */
+  position: sticky;
+
+  /* Stick it to the top */
+  top: 0;
+
+  /* Keep navbar above other elements */
+  z-index: 100;
+
+  /* Add soft depth */
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.22),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.02);
+}
+
+
+
+/* =========================================================
+   DECORATIVE BOTTOM LINE
+
+   Adds a very subtle earthy gradient under the navbar
+   without changing NavBar.jsx.
+   ========================================================= */
+
+.navbar::after {
+  /* Create an empty virtual element */
+  content: "";
+
+  /* Position it inside the navbar */
+  position: absolute;
+
+  /* Place it at the bottom */
+  bottom: 0;
+
+  /* Start around the center */
+  left: 50%;
+
+  /* Move it back by half of its own width */
+  transform: translateX(-50%);
+
+  /* Decorative line size */
+  width: 180px;
+  height: 1px;
+
+  /*
+    Horizontal earthy gradient:
+    green → mustard → burgundy
+  */
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--green),
+    var(--mustard),
+    var(--burgundy),
+    transparent
+  );
+
+  /* Keep the line subtle */
+  opacity: 0.55;
+}
+
+
+
+/* =========================================================
+   BRAND
+   "Movie App"
+   ========================================================= */
+
+.navbar-brand {
+  /* Make the brand larger */
+  font-size: 1.45rem;
+
+  /* Make it bold */
+  font-weight: 700;
+
+  /* Slightly reduce letter spacing */
+  letter-spacing: -0.04em;
+
+  /* Use cream */
+  color: var(--cream);
+}
+
+
+
+/* Style the link inside the brand */
+.navbar-brand a {
+  /* Use cream text */
+  color: var(--cream);
+
+  /* Smooth hover animation */
+  transition:
+    color 0.25s ease,
+    text-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+
+/* Brand hover */
+.navbar-brand a:hover {
+  /* Change to mustard */
+  color: var(--mustard);
+
+  /* Add a subtle warm glow */
+  text-shadow: 0 0 20px rgba(199, 154, 59, 0.22);
+}
+
+
+
+/* =========================================================
+   NAVIGATION LINKS CONTAINER
+   ========================================================= */
+
+.navbar-links {
+  /* Put Home and Favorites next to each other */
+  display: flex;
+
+  /* Vertically center them */
+  align-items: center;
+
+  /* Add space between them */
+  gap: 0.4rem;
+}
+
+
+
+/* =========================================================
+   NAVIGATION LINK
+   Home / Favorites
+   ========================================================= */
+
+.nav-link {
+  /* Use muted beige text */
+  color: var(--text-secondary);
+
+  /* Set text size */
+  font-size: 0.95rem;
+
+  /* Medium font weight */
+  font-weight: 500;
+
+  /* Add space inside each link */
+  padding: 0.6rem 1rem;
+
+  /* Add a transparent border */
+  border: 1px solid transparent;
+
+  /* Make each link pill-shaped */
+  border-radius: 999px;
+
+  /* Smooth hover animation */
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+
+/* Navigation link hover */
+.nav-link:hover {
+  /* Use cream text */
+  color: var(--cream);
+
+  /* Add transparent olive green background */
+  background-color: rgba(64, 85, 66, 0.22);
+
+  /* Add subtle green border */
+  border-color: rgba(64, 85, 66, 0.4);
+
+  /* Move slightly upward */
+  transform: translateY(-1px);
+
+  /* Add a tiny glow */
+  box-shadow: 0 6px 18px rgba(64, 85, 66, 0.12);
+}
+
+
+
+/* =========================================================
+   TABLET / MOBILE RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    /* Reduce navbar padding */
+    padding: 0.9rem 1rem;
+  }
+
+
+  .navbar-brand {
+    /* Make the brand slightly smaller */
+    font-size: 1.2rem;
+  }
+
+
+  .navbar-links {
+    /* Reduce space between links */
+    gap: 0.2rem;
+  }
+
+
+  .nav-link {
+    /* Reduce link padding */
+    padding: 0.5rem 0.7rem;
+
+    /* Slightly smaller text */
+    font-size: 0.9rem;
+  }
+
+
+  .navbar::after {
+    /* Make decorative line smaller on mobile */
+    width: 120px;
+  }
+
+}
