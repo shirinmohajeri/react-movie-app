@@ -10,6 +10,19 @@ The UI uses a modern glassmorphism design with an earthy / nude color palette in
 
 ---
 
+## 📸 Project Preview
+
+### Home Page
+
+![React Movie App Home Page](./screenshots/home-page.png)
+
+### Favorites Page
+
+![React Movie App Favorites Page](./screenshots/favorites-page.png)
+
+
+---
+
 ## ✨ Features
 
 - Browse popular movies from TMDB
