@@ -1193,28 +1193,6 @@ During this project I practiced:
 
 ---
 
-# 🔮 Possible Future Improvements
-
-Future versions could include:
-
-- Movie details page
-- Movie ratings
-- Genre filters
-- Sorting
-- Pagination
-- Better search behavior
-- Search suggestions
-- Loading skeletons
-- Missing poster fallback
-- Active navbar indicator
-- Movie overview
-- Cast information
-- Trailer support
-- Theme switching
-- Public deployment
-
----
-
 # 👩‍💻 Author
 
 **Shirin Mohajeri**
