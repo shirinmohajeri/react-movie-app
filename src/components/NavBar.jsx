@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 // Import CSS styles for the NavBar component.
 // "../" means go one folder back from components to src.
-import "../css/NavBar.css";
+import "../css/Navbar.css";
 
 
 // Create the NavBar component.
