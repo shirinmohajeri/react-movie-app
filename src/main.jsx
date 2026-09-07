@@ -14,7 +14,6 @@ import './css/index.css'
 // Import the main App component.
 import App from './App.jsx'
 
-
 // Find the HTML element with id="root" and start the React application.
 createRoot(document.getElementById('root')).render(
 
@@ -22,7 +21,7 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
 
     {/* BrowserRouter enables routing and navigation inside App */}
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
 
       {/* Display the main App component */}
       <App />
