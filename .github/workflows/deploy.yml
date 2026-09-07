@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+﻿name: Deploy to GitHub Pages
 
 on:
   push:
@@ -25,39 +25,31 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Get the project code
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Install Node.js
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
 
-      # Install the project's packages
       - name: Install dependencies
         run: npm ci
 
-      # Build the Vite React project
-      # Give Vite access to the TMDB API key stored in GitHub Secrets
       - name: Build
         run: npm run build
         env:
           VITE_TMDB_API_KEY: ${{ secrets.VITE_TMDB_API_KEY }}
 
-      # Prepare GitHub Pages
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      # Upload the built dist folder
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 
-      # Publish the website
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
