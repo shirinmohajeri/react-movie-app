@@ -41,8 +41,11 @@ jobs:
         run: npm ci
 
       # Build the Vite React project
+      # Give Vite access to the TMDB API key stored in GitHub Secrets
       - name: Build
         run: npm run build
+        env:
+          VITE_TMDB_API_KEY: ${{ secrets.VITE_TMDB_API_KEY }}
 
       # Prepare GitHub Pages
       - name: Setup Pages
